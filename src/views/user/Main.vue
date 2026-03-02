@@ -55,7 +55,7 @@
             <router-view></router-view>
         </main>
 
-        <!-- 以下弹窗全部未改动 -->
+    
         <el-dialog title="退出登录" :show-close="false" :visible.sync="dialogOutOperation" width="20%">
             <span>确定退出登录？</span>
             <span slot="footer" class="dialog-footer">
@@ -164,7 +164,7 @@ export default {
             dialogUserInfoVisible: false,
             dialogOutOperation: false,
 
-            /* ⭐ 已加入健康记录 */
+        
             navItems: [
                 { path: '/home', title: '首页' },
                 { path: '/recipe-list', icon: 'el-icon-hot-water', title: '食谱信息' },
@@ -333,7 +333,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* ⭐ 新增：高亮蓝色风格 */
+
 // .nav-item.active {
 //     color: #57aaff !important;
 //     font-weight: 600;
@@ -344,7 +344,7 @@ export default {
     display: none;
 }
 
-/* 其余样式完全未动 ↓↓↓ */
+
 .app-container {
     display: flex;
     flex-direction: column;
@@ -414,7 +414,7 @@ export default {
     background: linear-gradient(90deg, #63b2ff, #4ea3ff);
     box-shadow: 0 2px 7px rgba(87, 170, 255, 0.35);
 }
-/* 记录按钮保持原来的胶囊风格（不改功能） */
+
 .record {
     background: linear-gradient(90deg, #6bb8ff, #57aaff);
     color: #fff;

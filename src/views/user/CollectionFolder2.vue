@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// B站【程序员辰星】原创出品
+
 import CollectionHealthNews from "@/views/user/CollectionHealthNews.vue";
 import CollectionRecipe from "@/views/user/CollectionRecipe.vue";
 export default {

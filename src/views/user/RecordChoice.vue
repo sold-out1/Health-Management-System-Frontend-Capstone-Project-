@@ -26,13 +26,11 @@ export default {
   name: "RecordChoice",
   methods: {
     goManual() {
-      // 这里跳转到你原本的健康记录手动输入页面
-      // 根据你的项目结构，通常是 '/user/health-record' 或者具体的添加页面
-      // 请根据实际情况修改下面的 path
+     
       this.$router.push('/health-record'); 
     },
     goBluetooth() {
-      // 跳转到我们下一步要写的蓝牙页面
+     
       this.$router.push('/user/bluetooth-sync');
     }
   }

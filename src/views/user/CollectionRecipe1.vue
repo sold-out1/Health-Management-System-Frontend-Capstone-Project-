@@ -55,7 +55,7 @@
 </template>
 
 <script>
-// B站【程序员辰星】原创出品
+
 import AutoInput from "@/components/AutoInput.vue";
 import Editor from "@/components/Editor"
 

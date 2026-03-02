@@ -75,7 +75,7 @@ export default {
         }
       } catch (error) {
         console.error(error);
-        // 改成这种最传统的写法，兼容性最强
+  
         let errorMsg = '服务器连接超时';
         if (error.response && error.response.data && error.response.data.message) {
           errorMsg = error.response.data.message;
