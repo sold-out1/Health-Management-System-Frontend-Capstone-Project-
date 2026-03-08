@@ -139,11 +139,11 @@
                   </el-button>
                   <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item 
-                      @click.native="handleView(scope.row.id)" 
-                      icon="el-icon-view"
+                      @click.native="handleEdit(scope.row.id)" 
+                      icon="el-icon-edit"
                       class="dropdown-item"
                     >
-                      查看
+                      修改
                     </el-dropdown-item>
                     <el-dropdown-item 
                       @click.native="handleDelete(scope.row)" 
@@ -374,7 +374,6 @@
 import AutoInput from "@/components/AutoInput.vue";
 import Tab from "@/components/Tab"
 import Editor from "@/components/Editor"
-import { getUserInfo } from '@/utils/storage.js';
 
 export default {
   components: { AutoInput, Tab, Editor },
@@ -573,10 +572,6 @@ export default {
       this.fetchFreshData();
     },
     
-    handleView(id) {
-      this.$router.push({ path: '/recipe-detail', query: { id } });
-    },
-    
     async handleEdit(id) {
       try {
         const { data } = await this.$axios.get(`/recipe/${id}`);
@@ -594,10 +589,6 @@ export default {
     },
     
     handleDelete(row) {
-      if (row.isPublic == 1) {
-        this.$message.error('没有权限删除公共食谱');
-        return;
-      }
       this.dialogDeletedVisible = true;
       this.id = row.id;
     },

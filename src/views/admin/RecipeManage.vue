@@ -147,7 +147,11 @@ export default {
       }
     },
     handleChange(obj) {
-      this.recipeQueryDto.isAudit = Number(obj.value);
+      if (obj.value === 'null') {
+        delete this.recipeQueryDto.isAudit;
+      } else {
+        this.recipeQueryDto.isAudit = Number(obj.value);
+      }
       this.fetchFreshData();
     },
     async auditRecipe() {
@@ -188,7 +192,14 @@ export default {
     },
     async fetchFreshData() {
       try {
-        const { data, total } = await this.$axios.post('/recipe/list', this.recipeQueryDto);
+        const params = {
+          current: this.recipeQueryDto.current,
+          size: this.recipeQueryDto.size
+        };
+        if (this.recipeQueryDto.isAudit !== undefined) {
+          params.isAudit = this.recipeQueryDto.isAudit;
+        }
+        const { data, total } = await this.$axios.post('/recipe/list', params);
         this.apiResult.data = data;
         this.apiResult.total = total;
       } catch (error) {
